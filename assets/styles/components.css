@@ -1,0 +1,274 @@
+:root {
+  /* font-color */
+  --primary-font-color: #ffffff;
+  --secondary-font-color: #ffc107;
+  /* Backgroun-color */
+  --primary-bg-color: #4c091e;
+  --secondary-bg-color: #190405;
+  --dark-bg-color: #181823;
+  /* -------------- */
+  --btn-bg-color: #d5225b;
+  /* -------------- */
+  --gray-color: #8c8c8e;
+  /* -------------- */
+}
+/*--------------------------------------------------------------
+# Container
+--------------------------------------------------------------*/
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 1320px;
+}
+.container-fluid {
+  padding: 0 3rem;
+}
+/*--------------------------------------------------------------
+# Underline
+--------------------------------------------------------------*/
+.underline::after {
+  content: "";
+  height: 2px;
+  width: 0%;
+  background-color: var(--secondary-font-color);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.6s;
+}
+
+/*--------------------------------------------------------------
+# btn    btn-primary    btn-secondary
+--------------------------------------------------------------*/
+.btn {
+  font-family: "DM Sans", sans-serif;
+  text-transform: uppercase;
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn span {
+  margin-right: 10px;
+}
+.btn .arrow-right-1 {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 0.3s;
+}
+.btn .arrow-right-2 {
+  position: absolute;
+  top: 50%;
+  transform: translate(-20px, -50%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.btn:hover .arrow-right-1 {
+  transform: translate(20px, -50%);
+  opacity: 0;
+}
+.btn:hover .arrow-right-2 {
+  transform: translate(0, -50%);
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .btn {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 2rem 2rem 2rem 2rem;
+  }
+}
+
+/* ----- */
+.btn-primary {
+  color: var(--primary-font-color);
+  background-color: var(--btn-bg-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 2.2rem 5rem 2.2rem 3rem;
+}
+.btn-primary:hover {
+  background-color: var(--primary-font-color);
+  color: var(--primary-bg-color);
+}
+/* ----- */
+.btn-secondary {
+  color: var(--primary-font-color);
+  border: 1px solid var(--primary-font-color);
+  padding: 1.5rem 4rem 1.5rem 3rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.btn-secondary:hover {
+  border-color: var(--btn-bg-color);
+  background-color: var(--btn-bg-color);
+}
+/* ----- */
+.btn-pink {
+  color: var(--btn-bg-color);
+  border: 1px solid var(--btn-bg-color);
+  padding: 1.5rem 4rem 1.5rem 3rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.btn-pink:hover {
+  color: var(--primary-font-color);
+  border-color: var(--btn-bg-color);
+  background-color: var(--btn-bg-color);
+}
+/*--------------------------------------------------------------
+# h-line
+--------------------------------------------------------------*/
+.h-line {
+  width: 85%;
+  height: 2px;
+  background-color: var(--gray-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .h-line {
+    opacity: 0;
+  }
+}
+/* .section-title--left {
+  position: relative;
+  background-color: #181823;
+}
+.section-title--left::after {
+  content: "";
+  position: absolute;
+  background-color: var(--gray-color);
+  height: 1px;
+  width: 480px;
+  top: 50%;
+  left: calc(100% + 20px);
+  transform: translateY(-50%);
+} */
+/*--------------------------------------------------------------
+# section-title
+--------------------------------------------------------------*/
+.section-title {
+  font-size: 7rem;
+  font-weight: 400;
+}
+.section-title--center {
+  position: relative;
+}
+.section-title--center::after {
+  content: "";
+  position: absolute;
+  background-color: #d5225b;
+  height: 1px;
+  width: 32%;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.section-title--center::before {
+  content: "";
+  position: absolute;
+  background-color: #d5225b;
+  height: 1px;
+  width: 32%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@media (max-width: 1200px) {
+  .section-title {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 992px) {
+  .section-title--center::after,
+  .section-title--center::before {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 576px) {
+}
+/*--------------------------------------------------------------
+# category + date
+--------------------------------------------------------------*/
+.category {
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 0.8rem 2rem;
+  color: var(--primary-font-color);
+  background-color: var(--btn-bg-color);
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+.date {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1rem 2rem;
+  color: var(--gray-color);
+}
+/*--------------------------------------------------------------
+# multiline-underline
+--------------------------------------------------------------*/
+.multiline-underline {
+  background-image: linear-gradient(#fff, #fff);
+  background-size: 0 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.8s;
+}
+.multiline-underline:hover {
+  background-size: 100% 2px;
+}
+/*--------------------------------------------------------------
+# multiline-underline
+--------------------------------------------------------------*/
+.play {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(40px);
+  color: var(--btn-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play span {
+  width: 70%;
+  height: 70%;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*--------------------------------------------------------------
+# breakpoints
+--------------------------------------------------------------*/
+
+@media (max-width: 1400px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+}
+@media (max-width: 375px) {
+}
